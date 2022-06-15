@@ -1,0 +1,41 @@
+create user "{name_user}" with encrypted password '{passwd}'; 
+
+create database mydb; 
+
+Вход в субд под другим пользаком: psql -U {name}
+
+Список всех юзеров psql: select * from pg_shadow;
+
+https://postgrespro.ru/media/docs/postgresql/11/ru/postgres-A4.pdf
+
+https://kamaok.org.ua/?p=961
+
+
+psql {name_db} переключение базы данных 
+ALTER DATABASE {name_db} OWNER TO {name_owner};
+grant all privileges on database {db_name} to {name_owner}; 
+ALTER USER otr RENAME TO "rw-otr"; пример переименовывания юзера в базе 
+ALTER USER {name} WITH SUPERUSER{или другую роль};
+
+\c {data_base} →а потом → (т.е необходимо выбрать базу данных, где будут проводиться действия)
+GRANT  ALL ON ALL TABLES IN SCHEMA public TO {user}; -гранты на  все таблицы в схеме  
+
+ALTER USER "rw-otr” WITH PASSWORD 'f26F3Bz6'; пример смены пароля у пользователя в базе 
+
+TRUNCATE – очистить таблицу, либо набор таблиц
+Прим.* надо переключиться на таблицу, в которой необходимо провести очистку 
+TRUNCATE {table_name,…..};
+
+pg_dumpall -Upostgres > /opt/data/{name}.sql - бэкап базы
+или так, а то чет не сработало ласт раз
+pg_dump -U grafana_db > /opt/backup/grafana_table_20210922.sql
+Добавление ключей: (-d{database_name}, -t{table_name})
+psql -U{name} < /opt/{name}.sql  - разворачивание бэкапа 
+
+psql -U{user} -h /{name_schema} {name_db} -e “QUERY”  - запрос в бд через терминал  
+
+https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e
+
+\dt -list table in data base 
+
+https://postgrespro.ru/docs/postgresql/9.4/auth-pg-hba-conf
