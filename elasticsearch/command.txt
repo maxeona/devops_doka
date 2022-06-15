@@ -1,0 +1,7 @@
+Установка: 
+https://docs.7group.ru/display/DEV/Elasticsearch
+
+Вывод всех индексов: http(s)://{ip}:9200/_cat/indices
+Создание нового индекса: curl -XPUT {ip}:9200/{name_new_index}
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/cat-indices.html
