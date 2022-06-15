@@ -1,0 +1,57 @@
+Раздел 1. 
+Бэкапирование и восстановление gitlab
+Бэкап базовой командой: gitlab-backup create (помещается в дефолтную папку бэкапов гитлаба в 
+/var/opt/gitlab/backups
+ можно поменять путь в главном конфиге гитлаба)
+По дефолту архивируется в tar формат, куда упаковывается База данных
+Вложения
+Данные репозиториев Git
+Журналы вывода заданий CI/CD
+Артефакты задания CI/CD
+LFS-объекты
+Состояния Terraform ( представлено в GitLab 14.7)
+Образы реестра контейнеров
+Содержимое страниц GitLab
+Пакеты ( представлены в GitLab 14.7)
+Фрагменты
+Групповые вики
+!!!Вы можете восстановить резервную копию только до той же версии и типа (CE/EE) GitLab, на которой она была создана!!!
+не упаковываются секреты и Redis (и, следовательно, рабочие места Sidekiq)
+желательно сделать копию gitlab-secret.json и gitlab.rb
+Для установки Docker необходимо создать резервную копию тома, на котором хранятся файлы конфигурации. Если вы создали контейнер GitLab в соответствии с документацией, он должен находиться в /srv/gitlab/config каталоге.
+Стратегии резервного копирования(можно добавлять репы, убирать, синхронизировать и куча всякой всятины. можно прочитать на сайте: https://docs.gitlab.com/ee/raketasks/backup_restore.html#backup-options )
+Восстановление:
+!!!Предварительные условия:
+1) работающий гитлаб с той же версией, что и бэкап
+2) Вы бегали sudo gitlab-ctl reconfigureхотя бы раз.(?)
+3) гитлаб работает 
+4)файл бэкапа находится в каталоге резервного копирования и файл принадлежит гит пользователю!!!
+https://packages.gitlab.com/gitlab - пакеты с версиями для обновления гита
+Первым делом необходимо остановить процессы, которые подключены к бд: puma sidekiq
+sudo gitlab-ctl stop puma
+sudo gitlab-ctl stop sidekiq
+# Verify
+sudo gitlab-ctl status
+sudo gitlab-backup restore or 
+# This command will overwrite the contents of your GitLab database!
+sudo gitlab-backup restore BACKUP=11493107454_2018_04_25_10.6.4-ce
+перенести секреты и конфиг файл при необходимости
+sudo gitlab-ctl reconfigure
+sudo gitlab-ctl restart
+sudo gitlab-rake gitlab:check SANITIZE=true
+
+Обновление гитлаба:
+1) в случае, если есть инет
+apt update
+apt install gitlab-ee(ce)={version}
+2) если нет инета
+скачать пакет из https://packages.gitlab.com/gitlab
+сделать бэкап последней версии гита
+dpkg -i {packeg}
+
+Установка раннера:
+1)curl -L "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh" | sudo bash
+2)apt update 
+3)apt install gitlab-runner={version}
+Регистрация раннера:
+gitlab-ci-multi-runner register -n --url {url_gitlab}--registration-token {token_from_gitlab} --executor docker --docker-image "docker:stable" --tag-list dind,docker --locked=false
