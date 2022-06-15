@@ -26,6 +26,7 @@ TRUNCATE – очистить таблицу, либо набор таблиц
 Прим.* надо переключиться на таблицу, в которой необходимо провести очистку 
 TRUNCATE {table_name,…..};
 
+DELETE FROM {table_name} WHERE {condition}; - удаление строк по условию
 pg_dumpall -Upostgres > /opt/data/{name}.sql - бэкап базы
 или так, а то чет не сработало ласт раз
 pg_dump -U grafana_db > /opt/backup/grafana_table_20210922.sql
