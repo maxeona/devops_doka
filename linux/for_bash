@@ -1,1 +1,1 @@
-date +%s | sha256sum | base64 | head -c 8; echo - генерация случайного пароля 
+cat /dev/urandom | base64 | head -c {number_long} - генерация случайного пароля 
