@@ -39,3 +39,5 @@ https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-pos
 \dt -list table in data base 
 
 https://postgrespro.ru/docs/postgresql/9.4/auth-pg-hba-conf
+
+
