@@ -60,3 +60,6 @@ kubectl taint nodes node1 key1=value1:NoSchedule
 
 kubectl taint nodes node1 key1=value1:NoSchedule-
 отмена Taint
+
+Кодовая база планировщика 
+https://gist.github.com/jvns/5d492d66130a2f47b47820fd6b52eab5
