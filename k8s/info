@@ -136,7 +136,9 @@ roleRef:
 Users — глобальные пользователи, предназначены для людей или процессов, живущих вне кластера;
 ServiceAccounts — ограниченные пространством имён и предназначенные для процессов внутри кластера, запущенных на подах.
 
-
+Создание нового файла конфигурации:
+kubectl config --kubeconfig=./config set-cluster k8s --server=https://{ip}:6443 \
+--certificate-authority=/etc/kubernetes/pki/ca.crt --embed-certs=true
 
 
 
