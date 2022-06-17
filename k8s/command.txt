@@ -12,3 +12,22 @@ kubectl create -f ./my-namespace.yaml - создание нс
 
 kubectl delete namespaces <insert-some-namespace-name>
 
+
+****************************************************************
+Работа с квотами в пространстве
+****************************************************************
+Манифест:
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: mem-cpu-demo  {name quota}
+spec:
+  hard:
+    requests.cpu: "1000m"
+    requests.memory: 1Gi
+    limits.cpu: "2"
+    limits.memory: 2Gi
+*********************************************
+kubectl apply -f ./{file_with_manifest}.yaml -n {namespace}
+kubectl get resourcequota {name_quota} -{namepace} --output=yaml
+kubectl edit resourcequota {name_quota} -n {namespace}
