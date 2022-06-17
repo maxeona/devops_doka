@@ -12,6 +12,7 @@ kubectl create -f ./my-namespace.yaml - создание нс
 
 kubectl delete namespaces <insert-some-namespace-name>
 
+kubectl delete -f {name}.yaml удаляют всю связку сушностей, описанных в файле 
 
 ****************************************************************
 Работа с квотами в пространстве
