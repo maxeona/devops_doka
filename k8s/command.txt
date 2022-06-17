@@ -1,1 +1,14 @@
 kubectl create namespace <insert-namespace-name-here> - создание неймспейса
+
+Через манифест
+********************************************
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: <insert-namespace-name-here>
+  
+********************************************
+kubectl create -f ./my-namespace.yaml - создание нс
+
+kubectl delete namespaces <insert-some-namespace-name>
+
