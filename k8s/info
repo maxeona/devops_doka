@@ -140,9 +140,12 @@ ServiceAccounts — ограниченные пространством имён
 kubectl config --kubeconfig=./config set-cluster k8s --server=https://{ip}:6443 \
 --certificate-authority=/etc/kubernetes/pki/ca.crt --embed-certs=true
 
+Добавление нового пользователя:
+kubectl config --kubeconfig=./config set-credentials {name_new_user} --client-key={name_new_user}.key --client-certificate={name_new_user}.crt --embed-certs=true
 
-
-
+Добавление контекста: 
+kubectl config --kubeconfig=./config set-context {name_context} --cluster=k8s --user={name_new_user} --namespace {name_ns}
+Контекст связывает пользователя и кластер 
 
 
 
