@@ -32,4 +32,5 @@ spec:
 kubectl apply -f ./{file_with_manifest}.yaml -n {namespace}
 kubectl get resourcequota {name_quota} -{namepace} --output=yaml
 kubectl edit resourcequota {name_quota} -n {namespace}
-kubectl api-resources - получение списка Kubernetes apiGroups  
+kubectl api-resources - получение списка Kubernetes apiGroups  (или)
+kubectl api-resources -o wide
