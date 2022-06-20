@@ -85,6 +85,9 @@ Using RBAC Authorization
 RBAC-метод регулирования доступа к компьютерным или сетевым ресурсам на основе ролей отдельных пользователей 
 в вашей организации 
 Юзает rbac.authorization.k8s.io, в которой реализуется группа апи, позволяя динамически настраивать политики через апи куба
+Всё общение между компонентами кластера идёт через запросы к API-серверу, и каждый такой запрос как раз авторизуется специальным JWT-токеном. 
+Этот токен автоматически генерируется при создании объекта типа ServiceAccount и кладётся в secret. 
+
 
 !API RBAC объявляет четыре типа объектов Kubernetes: Role , ClusterRole , RoleBinding и ClusterRoleBinding . 
 
@@ -146,6 +149,7 @@ kubectl config --kubeconfig=./config set-credentials {name_new_user} --client-ke
 Добавление контекста: 
 kubectl config --kubeconfig=./config set-context {name_context} --cluster=k8s --user={name_new_user} --namespace {name_ns}
 Контекст связывает пользователя и кластер 
+
 
 
 
