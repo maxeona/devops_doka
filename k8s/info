@@ -147,9 +147,19 @@ ServiceAccounts — ограниченные пространством имён
 доп.дока
 https://docs.bitnami.com/tutorials/configure-rbac-in-your-kubernetes-cluster/
 
+При создании правил, в ресурсах подов, есть нюанс
+Когда указываем 
+apiVersion: [""]
+resources: ["pods/log"]
+verbs: ["get"]
+для просмотра логов 
+apiVersion: [""]
+resources: ["pods/exec"]
+verbs: ["create"]
 
-
-
+ClusterRole + ClusterRoleBinding = Все пространства имен
+ClusterRole + RoleBindings = определенные пространства имен
+Role + RoleBinding = одно и то же пространство имен
 
 
 
