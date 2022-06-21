@@ -47,8 +47,7 @@ openssl x509 -req -in {name}.csr -CA CA_LOCATION/ca.crt -CAkey CA_LOCATION/ca.ke
 CA_LOCATION - центр сертификации (ЦС) кластера Kubernetes. default this is /etc/kubernetes/pki/ 
 
 Создание нового файла конфигурации:
-kubectl config --kubeconfig=./config set-cluster k8s --server=https://{ip}:6443 \
---certificate-authority=/etc/kubernetes/pki/ca.crt --embed-certs=true
+kubectl config --kubeconfig=./config set-cluster k8s --server=https://{ip}:6443 --certificate-authority=/etc/kubernetes/pki/ca.crt --embed-certs=true
 
 Добавление нового пользователя:
 kubectl config --kubeconfig=./config set-credentials {name_new_user} --client-key={name_new_user}.key --client-certificate={name_new_user}.crt --embed-certs=true
