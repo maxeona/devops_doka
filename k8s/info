@@ -164,8 +164,8 @@ ClusterRole + RoleBindings = определенные пространства �
 Role + RoleBinding = одно и то же пространство имен
 
 
-
-
+Неплохая статья по этой теме:
+https://travis.media/clusterrolebinding-with-service-account-all-namespaces/
 
 
 
