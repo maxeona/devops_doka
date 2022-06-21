@@ -159,6 +159,8 @@ verbs: ["create"]
 
 ClusterRole + ClusterRoleBinding = Все пространства имен
 ClusterRole + RoleBindings = определенные пространства имен
+Описываем требуемые правила в ClusterRole, и потом посредством RoleBind привязываем к конкретному ns. так можем прописать к нескольким нс
+отдельными RoleBind
 Role + RoleBinding = одно и то же пространство имен
 
 
