@@ -55,3 +55,6 @@ kubectl config --kubeconfig=./config set-credentials {name_new_user} --client-ke
 Добавление контекста: 
 kubectl config --kubeconfig=./config set-context {name_context} --cluster=k8s --user={name_new_user} --namespace {name_ns}
 Контекст связывает пользователя и кластер 
+
+kubectl describe secrets -n {ns} $(kubectl -n {ns} get secret | awk '/dashboard-admin/{print $1}')
+ns-our namespace where is new sa
