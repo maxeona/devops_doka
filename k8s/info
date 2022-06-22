@@ -167,7 +167,7 @@ Role + RoleBinding = одно и то же пространство имен
 Неплохая статья по этой теме:
 https://travis.media/clusterrolebinding-with-service-account-all-namespaces/
 
-
+https://github.com/kelseyhightower/kubernetes-the-hard-way
 
 
 
