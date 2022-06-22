@@ -58,3 +58,5 @@ kubectl config --kubeconfig=./config set-context {name_context} --cluster=k8s --
 
 kubectl describe secrets -n {ns} $(kubectl -n {ns} get secret | awk '/dashboard-admin/{print $1}')
 ns-our namespace where is new sa
+
+kubectl auth can-i get deployment -as system:serviceaccount:dev:alice - разобрать 
