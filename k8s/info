@@ -198,3 +198,4 @@ envFrom:
 ConfigMap данные хранятся в базе etcd, поэтому большие данные передавать, херовая идея
 
 
+https://www.sobyte.net/post/2021-10/update-k8s-10y-expire-certs/
