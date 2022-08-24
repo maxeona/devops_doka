@@ -12,5 +12,48 @@ curl ifconfig.co - проверка внешнего айпи
 Работа с дисковым пространством
 **************************************************************
 
+echo "- - -" >/sys/class/scsi_host/host3/scan
 
+echo '1' > /sys/block/sdb/device/rescan
+
+growpart /dev/sda 3
+
+pvresize /dev/sdb
+lvchange -a y vg01
+lvscan
+lvextend /dev/ubuntu-vg/ubuntu-lv -l +100%FREE
+
+xfs_growfs /
+
+resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+
+
+sudo su -
+echo '1' > /sys/block/sda/device/rescan
+growpart /dev/sda 3
+pvresize /dev/sda3
+lvchange -a y ubuntu-vg
+lvextend /dev/ubuntu-vg/ubuntu-lv -l +100%FREE
+xfs_growfs /
+df -h|more
+
+
+sudo su -
+echo '1' > /sys/block/sdb/device/rescan
+pvresize /dev/sdb
+lvchange -a y vg01
+lvscan
+lvextend /dev/vg01/data -l +100%FREE
+xfs_growfs /opt/data
+df -h|more
+
+
+###EXT4 ubuntunew
+growpart /dev/sda 3
+pvresize /dev/sda3
+lvchange -a y  ubuntu-vg
+lvscan
+lvextend /dev/ubuntu-vg/ubuntu-lv -l +100%FREE
+resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+df -h
 
