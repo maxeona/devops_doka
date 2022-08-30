@@ -22,6 +22,8 @@ ALTER USER {name} WITH SUPERUSER{или другую роль};
 \c {data_base} →а потом → (т.е необходимо выбрать базу данных, где будут проводиться действия)
 GRANT  ALL ON ALL TABLES IN SCHEMA public TO {user}; -гранты на  все таблицы в схеме  
 
+REVOKE ALL ON SCHEMA public FROM {user}; - отозвать права
+
 ALTER USER "rw-otr” WITH PASSWORD 'f26F3Bz6'; пример смены пароля у пользователя в базе 
 
 TRUNCATE – очистить таблицу, либо набор таблиц
