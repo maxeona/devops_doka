@@ -34,6 +34,7 @@ DELETE FROM {table_name} WHERE {condition}; - удаление строк по �
 pg_dumpall -Upostgres > /opt/data/{name}.sql - бэкап базы
 или так, а то чет не сработало ласт раз
 pg_dump -U grafana_db > /opt/backup/grafana_table_20210922.sql
+-n -название схемы; -d название базы; -t - название таблицы
 Добавление ключей: (-d{database_name}, -t{table_name})
 psql -U{name} < /opt/{name}.sql  - разворачивание бэкапа 
 
