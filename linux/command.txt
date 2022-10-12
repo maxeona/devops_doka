@@ -57,3 +57,11 @@ lvextend /dev/ubuntu-vg/ubuntu-lv -l +100%FREE
 resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
 df -h
 
+
+
+***************************************************************************
+Management systemd
+***************************************************************************
+systemctl reset-failed 
+
+
