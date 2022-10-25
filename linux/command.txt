@@ -66,3 +66,5 @@ systemctl reset-failed
 
 Инфа по сетевому стеку
 https://strizhechenko.github.io/2017/04/13/linux-network-stack.html
+
+ps -ft pts/(number) - check connected terminal(tty)
