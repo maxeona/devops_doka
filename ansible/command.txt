@@ -1,0 +1,2 @@
+ansible-playbook playbook.yaml --check --diff 
+--check --diff  - проверка того, что выполнилось бы, без реального выполнения. Аналог plan в terraform 
