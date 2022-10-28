@@ -12,6 +12,7 @@ https://postgrespro.ru/media/docs/postgresql/11/ru/postgres-A4.pdf
 
 https://kamaok.org.ua/?p=961
 
+COPY {name} TO '/tmp/{name}.csv' WITH (FORMAT CSV, HEADER); - копирование таблицы в опред формат (перед этим надо сделать коннект к таблице)
 
 psql {name_db} переключение базы данных 
 ALTER DATABASE {name_db} OWNER TO {name_owner};
