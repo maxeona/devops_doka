@@ -1,3 +1,4 @@
+chage - изменить срок действия пароля
 pam_tally2 -r -u {user}
 /etc/pam.d/common-auth - глянуть настройки аутентификации 
 mtr {name_site} - гибрид ping+traceroute
