@@ -1,0 +1,4 @@
+ftp login@password
+ls -list dir
+get {name_file} <src>/{name_file}
+wget ftp://user:password@ftp.mydomain.com/path/file.ext
