@@ -69,3 +69,4 @@ systemctl reset-failed
 https://strizhechenko.github.io/2017/04/13/linux-network-stack.html
 
 ps -ft pts/(number) - check connected terminal(tty)
+HISTCONTROL=ignoredups:ignorespace - set invize some comand
