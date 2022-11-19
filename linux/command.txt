@@ -61,7 +61,7 @@ df -h
 
 
 ***************************************************************************
-Management systemd
+                          Management systemd
 ***************************************************************************
 systemctl reset-failed 
 
@@ -69,4 +69,11 @@ systemctl reset-failed
 https://strizhechenko.github.io/2017/04/13/linux-network-stack.html
 
 ps -ft pts/(number) - check connected terminal(tty)
+****************************************************************************
+                                 ХИНТЫ
+****************************************************************************
 HISTCONTROL=ignoredups:ignorespace - set invize some comand
+echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all -disable response icmp 
+echo 0 > /proc/sys/net/ipv4/icmp_echo_ignore_all -enable response icmp
+another way
+echo "net.ipv4.icmp_echo_ignore_all=1" >> /etc/sysctl.conf -disable
