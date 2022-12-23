@@ -1,5 +1,9 @@
 select * from pg_stat_activity; - статистика по всем базам
-
+\a - переключ режима выравнивания
+\t - заголовки вывода 
+\x - расширенный формат
+\o /tmp/{name_file} - записать в указанное место результат запроса !!!!!!! (после команды с новой строки ввод запроса, и оно запи)
+\password {user} - change password !!!!!!!!
 create user "{name_user}" with encrypted password '{passwd}'; 
 
 create database mydb; 
