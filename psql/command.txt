@@ -9,7 +9,7 @@ create user "{name_user}" with encrypted password '{passwd}';
 create database mydb; 
 ALTER DATABASE {name} RENAME TO {name}; - переименование базы
 ALTER DATABASE {name} CONNECTION LIMIT {number}; - изменение кол-во подключений
-
+ALTER DATABASE {name} SET search_path = public, name; or enother sequence
 
 Вход в субд под другим пользаком: psql -U {name}
 
