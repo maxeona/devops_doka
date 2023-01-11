@@ -52,6 +52,7 @@ ALTER USER {name} WITH SUPERUSER{или другую роль};
 
 \c {data_base} →а потом → (т.е необходимо выбрать базу данных, где будут проводиться действия)
 GRANT  ALL ON ALL TABLES IN SCHEMA public TO {user}; -гранты на  все таблицы в схеме  
+если добавить к команде грант WITH GRANT OPTION - то новая роль сможет в дальнешйем наделять такими же грантами остальных
 
 REVOKE ALL ON SCHEMA public FROM {user}; - отозвать права
 
