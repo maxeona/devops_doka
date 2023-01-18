@@ -29,6 +29,7 @@ ALTER DATABASE {name} SET search_path = public, name; or enother sequence
 \set ECHO_HIDDEN on - увидеть запросы различных команд клиента psql 
 
 Вход в субд под другим пользаком: psql -U {name}
+ALTER DEFAULT PRIVILEGES FOR ROLE "{user_owner}" IN SCHEMA public GRANT SELECT, INSERT, UPDATE, DELETE  ON TABLES TO "user_to";
 
 ALTER TABLE {name} SET SCHEMA {name_schema}; -перемещение объекта между схемами
 *т.к схемы, это логическая организация, перемещение происходит только в системном каталоге, сами данные физически остаются на месте
