@@ -1,1 +1,6 @@
 cat /dev/urandom | base64 | head -c {number_long} - генерация случайного пароля 
+--------------------
+SED
+--------------------
+sed 's/unix/linux/' {file_name}  замена слова unix на linux (/g - замена всех вхождений шаблона, /number -каждого n-го)
+sed 'nd' filename.txt - удаление n-ой строки
