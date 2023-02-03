@@ -95,3 +95,4 @@ SELECT
   state
 FROM pg_stat_activity
 WHERE state = 'active'; инфа о текущих процессах, в условии, что они активны, сама суть, это представление pg_stat_activity
+pg_locks - представление, которое даёт информацию о блокировках в бд
