@@ -96,3 +96,5 @@ SELECT
 FROM pg_stat_activity
 WHERE state = 'active'; инфа о текущих процессах, в условии, что они активны, сама суть, это представление pg_stat_activity
 pg_locks - представление, которое даёт информацию о блокировках в бд
+select pg_backend_pid(16728); or select pg_terminate_backend(16728); - уничтожение или остановка блокирующего процесса
+
