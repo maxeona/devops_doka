@@ -4,3 +4,5 @@ SED
 --------------------
 sed 's/unix/linux/' {file_name}  замена слова unix на linux (/g - замена всех вхождений шаблона, /number -каждого n-го)
 sed 'nd' filename.txt - удаление n-ой строки
+
+https://www.opennet.ru/docs/RUS/bash_scripting_guide/
