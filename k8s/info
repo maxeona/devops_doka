@@ -199,3 +199,6 @@ ConfigMap данные хранятся в базе etcd, поэтому бол�
 
 
 https://www.sobyte.net/post/2021-10/update-k8s-10y-expire-certs/
+
+Разворачивание дашборда
+https://www.dmosk.ru/instruktions.php?object=kubernetes-ubuntu
