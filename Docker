@@ -46,3 +46,8 @@ docker config create {name.*} {source_file}
 docker config inspect
 docker config ls
 docker config rm
+
+docker secret create
+docker secret inspect
+docker secret ls
+docker secret rm
