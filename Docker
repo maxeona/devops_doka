@@ -40,6 +40,9 @@ docker node promote - аналог, повышение роли
 docker node demote - аналог, понижение роли
 docker node update --availability drain <NODE> -сделать ноду нерабочей для размещения на ней контейнеров
 
+Узлы менеджера Docker хранят состояние роя и журналы менеджера в /var/lib/docker/swarm/каталоге. 
+Эти данные включают в себя ключи, используемые для шифрования журналов Raft. Без этих ключей вы не сможете восстановить рой.
+
 CONFIG'S И SECRET'S
 Когда вы создаёте такой config – Docker отправляет его на manager-ноду кластера по TLS, где он хранится в зашифрованных Raft логах (/var/lib/docker/swarm/raft), которые реплицируются по всем менеджерам swarm-а.
 docker config create {name.*} {source_file}
