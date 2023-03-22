@@ -38,7 +38,7 @@ CMD будет переопределен при запуске контейне
 docker node update --role worker/manager
 docker node promote - аналог, повышение роли
 docker node demote - аналог, понижение роли
-
+docker node update --availability drain <NODE> -сделать ноду нерабочей для размещения на ней контейнеров
 
 CONFIG'S И SECRET'S
 Когда вы создаёте такой config – Docker отправляет его на manager-ноду кластера по TLS, где он хранится в зашифрованных Raft логах (/var/lib/docker/swarm/raft), которые реплицируются по всем менеджерам swarm-а.
