@@ -3,7 +3,8 @@
 kubeadm alpha certs check-expiration --config="/etc/kubernetes/kubeadm-config.yaml"
 или
 cat /etc/kubernetes/pki/*.crt | openssl x509 -noout -enddate 
-
+или 
+kubeadm certs check-expiration
 
 kubectl create namespace <insert-namespace-name-here> - создание неймспейса
 
