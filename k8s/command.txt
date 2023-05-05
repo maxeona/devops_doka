@@ -53,7 +53,10 @@ openssl req -new -key {name}.key -out {name}.csr -subj "/CN={name}"
 openssl x509 -req -in {name}.csr -CA CA_LOCATION/ca.crt -CAkey CA_LOCATION/ca.key -CAcreateserial -out {name}.crt -days 500 (на 500 дней, предполагаю, можно убрать нахой)
 CA_LOCATION - центр сертификации (ЦС) кластера Kubernetes. default this is /etc/kubernetes/pki/ 
 
-Создание нового файла конфигурации:
+********************************************************
+РАБОТА С КОНФИГАМИ 
+********************************************************
+Создание нового кластера в конфигурацию:
 kubectl config --kubeconfig=./config set-cluster k8s --server=https://{ip}:6443 --certificate-authority=/etc/kubernetes/pki/ca.crt --embed-certs=true
 
 Добавление нового пользователя:
