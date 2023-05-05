@@ -9,6 +9,8 @@ kubeadm certs check-expiration
 ПОЧИТАТЬ
 https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/
 
+kubeadm certs renew all - обновление всех сертов через кубадм(после этого неоьходимо перенести все ключевые компоненты в другую папку на время, а потом вернуть назад,
+эдакий релоад)
 
 kubectl create namespace <insert-namespace-name-here> - создание неймспейса
 
