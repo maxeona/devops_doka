@@ -6,6 +6,10 @@ cat /etc/kubernetes/pki/*.crt | openssl x509 -noout -enddate
 или 
 kubeadm certs check-expiration
 
+ПОЧИТАТЬ
+https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/
+
+
 kubectl create namespace <insert-namespace-name-here> - создание неймспейса
 
 Через манифест
