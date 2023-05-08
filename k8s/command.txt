@@ -85,7 +85,7 @@ kubectl describe secrets -n {ns} $(kubectl -n {ns} get secret | awk '/dashboard-
 ns-our namespace where is new sa
 
 kubectl auth can-i get deployment -as system:serviceaccount:dev:alice - разобрать 
-kubectl cordon {node_name}  - Отметить узел, как неназначаемый
+kubectl cordon {node_name}  - Отметить узел, как неназначаемый (опция будет доступна для новых подов)
 kubectl uncordon {node_name} - Отметить узел, как назначаемый (снять предыдущее действие)
 ####################################################################################################################################################
 HELM
