@@ -54,6 +54,9 @@ kubectl edit resourcequota {name_quota} -n {namespace}
 kubectl api-resources - получение списка Kubernetes apiGroups  (или)
 kubectl api-resources -o wide
 
+kubectl exec nginx -- {command} - выполнение и вывод команды внутри пода(без проваливания в сам под)
+kubectl exec -it - (Чтобы зайти внутрь пода, надо добавить ключик -it — interactive tty)
+
 ****************************************************
 RBAC
 ****************************************************
