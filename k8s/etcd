@@ -1,1 +1,5 @@
 etcdctl member list - список всех участников кластера etcd
+etcdctl snapshot save /tmp/snap - создание бэкапа
+etcdctl snapshot status /tmp/snap - статус бэкапа
+etcdctl snapshot restore /tmp/snap - восстановление из бэкапа
+
