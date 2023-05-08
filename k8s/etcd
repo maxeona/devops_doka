@@ -3,3 +3,5 @@ etcdctl snapshot save /tmp/snap - создание бэкапа
 etcdctl snapshot status /tmp/snap - статус бэкапа
 etcdctl snapshot restore /tmp/snap - восстановление из бэкапа
 
+etcdctl --cacert /etc/ssl/etcd/ssl/ca.pem --cert /etc/ssl/etcd/ssl/node-node1.pem --key /etc/ssl/etcd
+/ssl/node-node1-key.pem --endpoints 206.189.106.200:2379 member list -example with cert
