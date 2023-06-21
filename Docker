@@ -54,3 +54,5 @@ docker secret create
 docker secret inspect
 docker secret ls
 docker secret rm
+
+docker image ls -q | xargs -I {} docker image rm -f {} - удаление всех образов на хосте 
