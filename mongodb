@@ -16,3 +16,5 @@ db.createUser(
    ]
  }
 )
+
+db.adminCommand( { shutdown: 1 } ) - перезапуск экземпляра
