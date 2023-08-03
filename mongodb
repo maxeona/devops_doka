@@ -18,3 +18,4 @@ db.createUser(
 )
 
 db.adminCommand( { shutdown: 1 } ) - перезапуск экземпляра
+use {db_name} -переключение на конкретную бд
