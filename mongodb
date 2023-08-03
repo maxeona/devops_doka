@@ -18,8 +18,8 @@ db.createUser(
  }
 )
 
-db.users.createIndex({"name" : 1}) - создание индексов
-db.users.dropIndex("name_1") - удаление индексов
+db.{name_collections}.createIndex({"name" : 1}) - создание индексов
+db.{name_collections}.dropIndex("name_1") - удаление индексов
 ######################################################################################################################
 Пример добавления в коллекцию
 db.{name_collections}.insertOne({"name": "Tom", "age": 28, "languages": ["english", "spanish"]})
