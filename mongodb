@@ -4,3 +4,15 @@ mongorestore --db db_name --drop /path_of_your_backup/01-01-19/db_name/
 --drop argument for drop databse before restore
 docker exec -i {id_container} mongorestore --archive --gzip < /<src>/{name}.gz
 rs.conf() - check cluster config
+db.createUser(
+ {
+   user: "reportsUser",
+   pwd: passwordPrompt(),  // or cleartext password if you wish
+   roles: [
+      { role: "read", db: "reporting" },
+      { role: "read", db: "products" },
+      { role: "read", db: "sales" },
+      { role: "readWrite", db: "accounts" }
+   ]
+ }
+)
