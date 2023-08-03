@@ -3,3 +3,4 @@ docker exec <CONTAINER> sh -c 'exec mongodump --db somedb --gzip --archive' > du
 mongorestore --db db_name --drop /path_of_your_backup/01-01-19/db_name/
 --drop argument for drop databse before restore
 docker exec -i {id_container} mongorestore --archive --gzip < /<src>/{name}.gz
+rs.conf() - check cluster config
