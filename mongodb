@@ -4,6 +4,7 @@ mongorestore --db db_name --drop /path_of_your_backup/01-01-19/db_name/
 --drop argument for drop databse before restore
 docker exec -i {id_container} mongorestore --archive --gzip < /<src>/{name}.gz
 rs.conf() - check cluster config
+
 db.createUser(
  {
    user: "reportsUser",
@@ -17,5 +18,21 @@ db.createUser(
  }
 )
 
+######################################################################################################################
+Пример добавления в коллекцию
+db.{name_collections}.insertOne({"name": "Tom", "age": 28, "languages": ["english", "spanish"]})
+
+######################################################################################################################
+
 db.adminCommand( { shutdown: 1 } ) - перезапуск экземпляра
 use {db_name} -переключение на конкретную бд
+show collections - показывает список всех коллекций в текущей бд
+db.stats() - статистика по текущей бд
+db.{name_collections}.stats() -статистика по конкретной коллекции в бд
+system.users - коллекция содержит всех пользаков бд, является технической коллекцией, так же, как и бд admin
+db.{name_collections}.find() - показать содержимое(документы) коллекции ore db.{name_collections}.find({key: "value"}) - поиск файлов по определенному условию (если нужно пустое значение,
+то исп null в values)
+db.{name_collections}.findOne() -извлечь одиночный документ or db.{name_collections}.find().limit(number) - задает лимит выборки or db.users.find().skip(number) -пропуск нескольких строк
+load("D:/users.js") - загрузка данных в бд
+db.{name_collections}.find().sort({name: 1}) - сортировка по убыванию (-1) и по возрастанию (1)
+
