@@ -1,0 +1,16 @@
+runlevel - проверка текущего уровня выполнения
+
+Runlevel 0 = poweroff.target (runlevel0.target)
+Runlevel 1 = rescue.target (runlevel1.target)
+Runlevel 2 = multi-user.target (runlevel2.target)
+Runlevel 3 = multi-user.target (runlevel3.target)
+Runlevel 4 = multi-user.target (runlevel4.target)
+Runlevel 5 = graphical.target (runlevel5.target)
+Runlevel 6 = reboot.target (runlevel6.target)
+
+
+##############################################################################################
+                              Проверка уровня по умолчанию systemd
+##############################################################################################
+systemctl get-default
+systemctl list-dependencies {name_target} -список служб. которые запускаются в данном таргете
