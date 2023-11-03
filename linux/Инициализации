@@ -12,5 +12,11 @@ Runlevel 6 = reboot.target (runlevel6.target)
 ##############################################################################################
                               Проверка уровня по умолчанию systemd
 ##############################################################################################
+Две главные директории:
+/usr/lib/systemd/system - там юниты для системы
+/usr/lib/systemd/user - для пользака
+
 systemctl get-default
 systemctl list-dependencies {name_target} -список служб. которые запускаются в данном таргете
+systemctl list-units (--type={type}) - все запущенные юниты
+systemctl list-units - список фэйловых юнитов
