@@ -1,7 +1,11 @@
+Elasticsearch => Clusters => Indices => Shards => Documents with key-value pairs
 Установка: 
 https://docs.7group.ru/display/DEV/Elasticsearch
-
-Вывод всех индексов: http(s)://{ip}:9200/_cat/indices
-Создание нового индекса: curl -XPUT {ip}:9200/{name_new_index}
-
 https://www.elastic.co/guide/en/elasticsearch/reference/current/cat-indices.html
+
+
+curl -XPUT {ip}:9200/{name_new_index} - Создание нового индекса
+curl {ip}:9200/_cat/indices - список индексов и их статус
+curl {ip}:9200/_cat/shards - список шардов и их статус
+curl {ip}:9200/_cat/health?pretty - показать состояние кластера
+curl {ip}:9200/_settings?pretty - показать настройки 
