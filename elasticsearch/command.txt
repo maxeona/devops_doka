@@ -15,3 +15,4 @@ PUT your_index/_settings
     "blocks.read_only": false
   }
 } 
+curl -XPUT -H "Content-Type: application/json" https://[YOUR_ELASTICSEARCH_ENDPOINT]:9200/_all/_settings -d '{"index.blocks.read_only_allow_delete": null}' - разблакировка индексов, после перевода их в режим чтения, при flood stage disk watermark
