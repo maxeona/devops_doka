@@ -1,3 +1,6 @@
+Про RAID и LVM
+https://debian-handbook.info/browse/ru-RU/stable/advanced-administration.html
+
 lspci - инфа по контроллерам дисков в различном виде
 blkid - вывод блочных устройств
 
