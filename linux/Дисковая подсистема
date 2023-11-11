@@ -2,6 +2,7 @@
 https://debian-handbook.info/browse/ru-RU/stable/advanced-administration.html
 Максимальное значение IOPS — максимальное количество операций чтения и записи в секунду.
 https://windowsnotes.ru/other/schetchiki-proizvoditelnosti-dlya-diskovoj-podsistemy/
+ОС при работе с диском использует, как правило, собственную единицу дискового пространства, называемую кластером (логическим блоком).
 
 lspci - инфа по контроллерам дисков в различном виде
 blkid - вывод блочных устройств
