@@ -8,6 +8,7 @@ curl -XPUT {ip}:9200/{name_new_index} - Создание нового индек
 curl {ip}:9200/_cat/indices - список индексов и их статус
 curl {ip}:9200/_cat/shards - список шардов и их статус
 curl {ip}:9200/_cat/health?pretty - показать состояние кластера
+curl '{ip}:9200/_cluster/health?level=indices&pretty' - показать состояние каждого индекса
 curl {ip}:9200/_settings?pretty - показать настройки 
 PUT your_index/_settings
 {
