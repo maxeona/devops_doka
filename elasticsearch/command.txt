@@ -23,3 +23,5 @@ curl -X PUT "localhost:9200/_cluster/settings?pretty" -H 'Content-Type: applicat
   409      "cluster.routing.allocation.enable": "null"
   410    }
   411  } - сброс , что бы включить распределение заново
+
+https://elasticsearch-ru.github.io/faq/bad-cluster-status.html - неплохая статья касательно траблшутинга 
