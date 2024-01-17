@@ -58,6 +58,7 @@ kubectl api-resources -o wide
 kubectl exec nginx -- {command} - выполнение и вывод команды внутри пода(без проваливания в сам под)
 kubectl exec -it - (Чтобы зайти внутрь пода, надо добавить ключик -it — interactive tty)
 
+kubectl api-resources --sort-by name -o wide - список ресурсов и их действий
 ****************************************************
 RBAC
 ****************************************************
