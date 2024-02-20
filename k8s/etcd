@@ -1,3 +1,17 @@
+###############################################################################################
+ПРОВЕРКА РАБОТОСОПОСБНОСТИ
+###############################################################################################
+export ENDPOINTS=127.0.0.1:2379,127.0.0.1:3379,127.0.0.1:4379
+./etcdctl --endpoints=$ENDPOINTS member list --write-out=table
+ETCDCTL_API=3 etcdctl --endpoints IP:2379   --cert=/etc/kubernetes/pki/etcd/server.crt   --key=/etc/kubernetes/pki/etcd/server.key   --cacert=/etc/kubernetes/pki/etcd/ca.crt   endpoint status  --write-out=table
+
+###############################################################################################
+БЭКАП
+###############################################################################################
+
+
+
+
 etcdctl member list - список всех участников кластера etcd
 etcdctl snapshot save /tmp/snap - создание бэкапа
 etcdctl snapshot status /tmp/snap - статус бэкапа
