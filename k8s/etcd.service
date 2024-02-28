@@ -1,0 +1,33 @@
+[Unit]
+Description=etcd
+Documentation=https://github.com/coreos/etcd
+Conflicts=etcd.service
+Conflicts=etcd2.service
+
+[Service]
+Type=notify
+Restart=always
+ExecStart=/usr/local/bin/etcd \
+    --advertise-client-urls=https://172.28.103.75:2379 \
+    --cert-file=/etc/kubernetes/pki/etcd/server.crt \
+    --client-cert-auth=true \
+    --data-dir=/var/lib/etcd \
+    --experimental-initial-corrupt-check=true \
+    --experimental-watch-progress-notify-interval=5s \
+    --initial-advertise-peer-urls=https://172.28.103.75:2380 \
+    --initial-cluster=k8s-demo-m=https://172.28.103.204:2380,k8s-demo-w1=https://172.28.103.93:2380,k8s-demo-w2=https://172.28.103.75:2380 \
+    --key-file=/etc/kubernetes/pki/etcd/server.key \
+    --listen-client-urls=https://127.0.0.1:2379,https://172.28.103.75:2379 \
+    --listen-metrics-urls=http://127.0.0.1:2381 \
+    --listen-peer-urls=https://172.28.103.75:2380 \
+    --name=k8s-demo-w2 \
+    --peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt \
+    --peer-client-cert-auth=true \
+    --peer-key-file=/etc/kubernetes/pki/etcd/peer.key \
+    --peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt \
+    --snapshot-count=10000 \
+    --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
+
+
+[Install]
+WantedBy=multi-user.target
