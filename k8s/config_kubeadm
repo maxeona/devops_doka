@@ -1,0 +1,17 @@
+apiVersion: kubeadm.k8s.io/v1beta3
+kind: ClusterConfiguration
+kubernetesVersion: stable
+controlPlaneEndpoint: "172.28.103.204:6443"
+etcd:
+  external:
+    endpoints:
+      - https://172.28.103.204:2379
+      - https://172.28.103.93:2379
+      - https://172.28.103.75:2379
+    caFile: /etc/kubernetes/pki/etcd/ca.crt
+    certFile: /etc/kubernetes/pki/apiserver-etcd-client.crt
+    keyFile: /etc/kubernetes/pki/apiserver-etcd-client.key
+networking:
+  dnsDomain: cluster.local
+  podSubnet: "10.233.64.0/18"
+  serviceSubnet: "10.233.0.0/18"
