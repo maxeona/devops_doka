@@ -54,6 +54,7 @@ RELEASE_VERSION="v0.15.1"
 curl -sSL "https://raw.githubusercontent.com/kubernetes/release/${RELEASE_VERSION}/cmd/kubepkg/templates/latest/deb/kubelet/lib/systemd/system/kubelet.service" | sed "s:/usr/bin:${DOWNLOAD_DIR}:g" | sudo tee /etc/systemd/system/kubelet.service
 mkdir -p /etc/systemd/system/kubelet.service.d
 curl -sSL "https://raw.githubusercontent.com/kubernetes/release/${RELEASE_VERSION}/cmd/kubepkg/templates/latest/deb/kubeadm/10-kubeadm.conf" | sed "s:/usr/bin:${DOWNLOAD_DIR}:g" | sudo tee /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+(лучше не делать след команду при подсоединении....достаточно инит токеном, оно само фазой запустит кубелет)
 systemctl enable --now kubelet
 curl -LO https://dl.k8s.io/release/v1.27.4/bin/linux/amd64/kubectl
 chmod +x ./kubectl
